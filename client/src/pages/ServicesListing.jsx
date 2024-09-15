@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Header } from "../header/Header";
-import { Footer } from "../footer/Footer";
-import { ServiceCard } from "../serviceCard/ServiceCard";
+import { Header } from "../components/header/Header";
+import { Footer } from "../components/footer/Footer";
+import { ServiceCard } from "../components/serviceCard/ServiceCard";
 
 
-export function LocationListing() {
-    const [locations, setLocations] = useState([]);
+
+export function ServicesListing() {
+    const [services, setServices] = useState([]);
 
     useEffect(() => {
         fetch('http://localhost:5026/api/services')
@@ -14,7 +15,8 @@ export function LocationListing() {
                 if (typeof obj !== 'object') {
                     throw new Error('Is serverio atejo ne objektas');
                 } else {
-                    setLocations(obj.data);
+                    setServices(obj.data);
+                    console.log(obj.data);
                 }
             })
             .catch(err => {
@@ -36,7 +38,7 @@ export function LocationListing() {
                 </div>
                 <div className="container px-4 py-5">
                     <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-                        {locations.map((location, index) => <ServiceCard key={index} {...location} />)}
+                        {services.map((service, index) => <ServiceCard key={index} {...service} />)}
                     </div>
                 </div>
             </main>

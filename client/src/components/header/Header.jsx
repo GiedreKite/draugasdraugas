@@ -19,7 +19,7 @@ export function Header() {
                         <Link to="/about" className="nav-link px-2 link-secondary">Apžvalga</Link>
                     </li>
                     <li>
-                        <Link to="/locations" className="nav-link px-2">Lankytinos vietos</Link>
+                        <Link to="/services" className="nav-link px-2">Teikiamos paslaugos</Link>
                     </li>
                     <li>
                         <Link to="/userslist" className="nav-link px-2">Vartotojų sąrašas</Link>
