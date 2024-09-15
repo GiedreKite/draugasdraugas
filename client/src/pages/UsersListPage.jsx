@@ -1,9 +1,9 @@
 import { Footer } from "../components/footer/Footer";
 import { Header } from "../components/header/Header";
-import Registration from "../components/registration/Registration";
+import UsersList from "../components/userList/UsersList";
 
 
-export function Register() {
+export function UsersListPage() {
     return (
         <>
             <Header />
@@ -11,7 +11,7 @@ export function Register() {
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                        <Registration/>
+                        <UsersList/>
                             
                         </div>
                     </div>

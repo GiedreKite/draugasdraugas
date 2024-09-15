@@ -1,5 +1,6 @@
 import { Footer } from "../components/footer/Footer";
 import { Header } from "../components/header/Header";
+import LoginOn from "../components/login/LoginOn";
 
 export function Login() {
     return (
@@ -9,8 +10,7 @@ export function Login() {
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                            <h1>Login</h1>
-                          
+                            <LoginOn />
                         </div>
                     </div>
                 </div>

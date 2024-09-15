@@ -19,13 +19,19 @@ export function Header() {
                         <Link to="/locations" className="nav-link px-2">Lankytinos vietos</Link>
                     </li>
                     <li>
+                        <Link to="/userslist" className="nav-link px-2">Vartotojų sąrašas</Link>
+                    </li>
+                    <li>
+                        <Link to="/user" className="nav-link px-2">Vartotojo informacija</Link>
+                    </li>
+                    <li>
                         <Link to="/404" className="nav-link px-2">404</Link>
                     </li>
                 </ul>
 
                 <div className="col-md-3 text-end">
-                   <Link to="/Login" className="btn btn-outline-primary me-2">Prisijungti</Link>
-                    <Link to="/Register" className="btn btn-primary">Registracija</Link>
+                   <Link to="/singin" className="btn btn-outline-primary me-2">Prisijungti</Link>
+                    <Link to="/login" className="btn btn-primary">Registracija</Link>
                 </div>
             </header>
         </div>
