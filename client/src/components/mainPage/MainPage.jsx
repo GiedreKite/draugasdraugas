@@ -37,7 +37,7 @@ import style from './MainPage.module.css'
     </div>
     <div className="carousel-inner">
       <div className="carousel-item active">
-        <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+        <svg className="bd-placeholder-img" width="100%" height="100%" url="http://localhost:5175/public/0.png" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
         <div className="container">
           <div className="carousel-caption text-start">
             <h1>Example headline.</h1>
@@ -47,7 +47,7 @@ import style from './MainPage.module.css'
         </div>
       </div>
       <div className="carousel-item">
-        <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+        <svg className="bd-placeholder-img" width="100%" height="100%" url="http://localhost:5175/public/1.png" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
         <div className="container">
           <div className="carousel-caption">
             <h1>Another example headline.</h1>

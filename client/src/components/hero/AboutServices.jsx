@@ -1,11 +1,11 @@
 import { useState } from "react";
-import style from './HomeHero.module.css';
+import style from './aboutServices.module.css';
 import plus from './img/plus.png';
 import x from './img/x.png';
 
 
 
-export function HomeHero() {
+export function AboutServices() {
    
     const [show0, setShow0] = useState(false);
     const [show1, setShow1] = useState(false);

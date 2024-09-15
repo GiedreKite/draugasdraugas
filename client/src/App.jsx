@@ -6,11 +6,13 @@ import { Login } from './pages/Login';
 import { Register } from './pages/Register'
 import { UsersListPage } from './pages/UsersListPage';
 import { SinginPage } from './pages/SinginPage';
+import { About } from './pages/About';
 export function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />}></Route>
+        <Route path='/about' element={<About/>}></Route>
         <Route path='/locations' element={<LocationListing />}></Route>
         <Route path='/userslist' element={<UsersListPage />}></Route>
         <Route path='/user' element={<Register />}></Route>

@@ -4,6 +4,6 @@ import mysql from 'mysql2/promise';
 //     host: 'localhost',
 //     user: 'root',
 //     password: '',
-//     database: 'turizmas',
+//     database: 'draugas',
 // });
 
