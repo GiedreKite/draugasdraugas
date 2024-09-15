@@ -1,13 +1,14 @@
 import { Footer } from "../components/footer/Footer";
 import { Header } from "../components/header/Header";
-import { HomeHero } from "../components/hero/HomeHero";
+import MainPage from "../components/mainPage/MainPage";
+
 
 
 export function Home() {
     return (
         <>
             <Header />
-            <HomeHero />
+            <MainPage />
             <Footer />
         </>
     );

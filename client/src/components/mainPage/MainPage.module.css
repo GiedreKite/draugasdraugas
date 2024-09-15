@@ -1,0 +1,11 @@
+.textConteiner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.text{
+    color: black;
+    font-size: 2rem;
+    padding: 2rem;
+}

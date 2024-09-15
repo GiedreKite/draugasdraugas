@@ -10,8 +10,8 @@ export default function Registration() {
     
     <main>
                 <div class="flex">
-                    <h1>Visos paskyros</h1>
-                    <a class="btn" href="/create-account">+ Nauja</a>
+                    <h1>Vartotojo duomenys:</h1>
+                    <a class="btn" href="/create-account">Koreguoti</a>
                 </div>
                 <table>
                     <thead>
@@ -24,8 +24,6 @@ export default function Registration() {
                             <td>Telefonas</td>
                             <td>E-paštas</td>
                             <td>Slaptažodis</td>
-                            <td>Slaptažodis</td>
-
                         </tr>
                     </thead>
                     <tbody>
@@ -38,7 +36,6 @@ export default function Registration() {
                             <td>Adresas</td>
                             <td>Telefonas</td>
                             <td>E-paštas</td>
-                            <td>Slaptažodis</td>
                             <td>Slaptažodis</td>
                         </tr>
                     </tbody>
