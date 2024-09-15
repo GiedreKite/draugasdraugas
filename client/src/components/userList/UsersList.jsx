@@ -2,9 +2,6 @@ import style from './UsersList.module.css'
 
 export default function UsersList() {
 
-
-
-    
     return <>
 
     
@@ -20,6 +17,9 @@ export default function UsersList() {
                             <td>Vartotojo vardas</td>
                             <td>Vardas</td>
                             <td>Pavardė</td>
+                            <td>Gimimo metai</td>
+                            <td>Gimimo mėnuo</td>
+                            <td>Gimimo diena</td>
                             <td>Adresas</td>
                             <td>Telefonas</td>
                             <td>E-paštas</td>
@@ -35,6 +35,9 @@ export default function UsersList() {
                             <td>Vartotojo vardas</td>
                             <td>Vardas</td>
                             <td>Pavardė</td>
+                            <td>Gimimo metai</td>
+                            <td>Gimimo mėnuo</td>
+                            <td>Gimimo diena</td>
                             <td>Adresas</td>
                             <td>Telefonas</td>
                             <td>E-paštas</td>
