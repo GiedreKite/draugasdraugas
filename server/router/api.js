@@ -1,10 +1,11 @@
 import express from 'express';
-import { locationsAPIrouter } from './locations/locations.js';
+
+import { servicesAPIrouter } from './services/services.js';
+
 
 export const apiRouter = express.Router();
 
-apiRouter.use('/locations', locationsAPIrouter);
-apiRouter.use('/services', locationsAPIrouter);
+apiRouter.use('/services', servicesAPIrouter);
 
 apiRouter.all('/', (req, res) => {
     return res.json({

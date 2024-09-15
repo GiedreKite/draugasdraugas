@@ -5,7 +5,7 @@ export const servicesAPIrouter = express.Router();
 
 servicesAPIrouter.get('/', getServices);
 
-async function getservices(req, res) {
+async function getServices(req, res) {
     const sql = 'SELECT * FROM services;';
     const dataFromServer = await connection.execute(sql);
 
