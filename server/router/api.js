@@ -8,7 +8,7 @@ export const apiRouter = express.Router();
 
 apiRouter.use('/services', servicesAPIrouter);
 
-apiRouter.use('/userinfo', userInfoAPIrouter);
+apiRouter.use('/users', userInfoAPIrouter);
 
 apiRouter.all('/', (req, res) => {
     return res.json({

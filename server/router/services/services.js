@@ -7,12 +7,16 @@ servicesAPIrouter.get('/', getServices);
 
 async function getServices(req, res) {
     const sql = 'SELECT * FROM services;';
-    const [dataFromServer,fields] = await connection.execute(sql);
+    let dataFromServer = null;
 
-    
+    try {
+        dataFromServer = await connection.execute(sql);
+    } catch (error) {
+        dataFromServer = [[]];
+    }
 
     return res.json({
         status: 'success',
-        data: dataFromServer,
+        data: dataFromServer[0],
     });
 }

@@ -6,7 +6,7 @@ export const userInfoAPIrouter = express.Router();
 userInfoAPIrouter.get('/', getuserInfo);
 
 async function getuserInfo(req, res) {
-    const sql = 'SELECT * FROM user;';
+    const sql = 'SELECT * FROM users;';
     const [dataFromServer,fields] = await connection.execute(sql);
 
     

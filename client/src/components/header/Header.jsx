@@ -25,7 +25,10 @@ export function Header() {
                         <Link to="/userslist" className="nav-link px-2">Vartotojų sąrašas</Link>
                     </li>
                     <li>
-                        <Link to="/userinfo" className="nav-link px-2">Vartotojo informacija</Link>
+                        <Link to="/users" className="nav-link px-2">Vartotojo informacija</Link>
+                    </li>
+                    <li>
+                        <Link to="/shoppingchart" className="nav-link px-2">Pirkinių krepšelis</Link>
                     </li>
                     <li>
                         <Link to="/404" className="nav-link px-2">404</Link>

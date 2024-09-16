@@ -1,8 +1,7 @@
 
 /* eslint-disable react/prop-types */
 export function UserInfo({ userName, name, surname, address, phone, birthYear, birthMonth, birthDay}) {
-    return ( <main>
-         <table class="table table-striped table-sm">
+    return ( <table class="table table-striped table-sm">
 <thead>
   <tr>
     <th scope="col">Vartotojo vardas</th>
@@ -34,10 +33,6 @@ export function UserInfo({ userName, name, surname, address, phone, birthYear, b
   </tr>
 </tbody>
 </table>
-
-
-    </main>
-       
 
     );
 }
