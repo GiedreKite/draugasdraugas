@@ -7,6 +7,7 @@ import { UsersListPage } from './pages/UsersListPage';
 import { SinginPage } from './pages/SinginPage';
 import { About } from './pages/About';
 import { ServicesListing } from './pages/ServicesListing';
+// import style from './App.css'
 
 export function App() {
   return (
@@ -16,7 +17,7 @@ export function App() {
         <Route path='/about' element={<About/>}></Route>
         <Route path='/services' element={<ServicesListing />}></Route>
         <Route path='/userslist' element={<UsersListPage />}></Route>
-        <Route path='/user' element={<Register />}></Route>
+        <Route path='/userinfo' element={<Register />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/singin' element={<SinginPage />}></Route>
         <Route path='*' element={<NotFound />}></Route>

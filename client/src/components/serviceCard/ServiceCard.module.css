@@ -11,8 +11,8 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    height: 800px;
-    width: 450px;
+    height: 100%;
+    width: 100%;
   }
   .card > small {
     font-size: 3rem;
@@ -23,8 +23,24 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    height: 875px;
-    width: 480px;
+    height: 110%;
+    width: 110%;
+  }
+  .shopping {
+    margin: 0!important;
+    padding: 0!important;
+    height: 35px!important;
+    width: 35px!important;
+    background-color: white!important;
+  }
+  .shoppingcart {
+    margin: 0!important;
+    padding: 0!important;
+    height: 50px!important;
+    width: 50px!important;
+    border: none!important;
+    background-color: white!important;
+    border-radius: 10px;
   }
   .card {
    

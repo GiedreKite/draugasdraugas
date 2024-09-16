@@ -79,10 +79,10 @@ export function AboutServices() {
         
         <hr className="featurette-divider"/>
         
-        <div className="row featurette">
+        <div className={style.questionContainerone}>
           <div className="col-md-7">
-            <h2 className="featurette-heading fw-normal lh-1"> „Draugas Draugui Draugas“ - <span className="text-body-secondary">Asmeninis Laikas ir Palaikymas.</span></h2>
-            <div  className={style.questionContainer}>
+            <h2 className="featurette-heading fw-normal lh-1"> „Draugas Draugui Draugas“ - <span className={style.text}>Asmeninis Laikas ir Palaikymas.</span></h2>
+            <div  className="col-md-7">
                     <button onClick={() => hide0()} className={style.question}>„Draugas Draugui“ – tai asmeninė paslauga, skirta tiems, kurie ieško kokybiško laiko. Kaip Jūsų asmeninė draugė, aš siūlau Jums unikalią patirtį, apimančią pramogas, bendravimą ir emocinį palaikymą. 
                         <img style={show0===true ? (false ? {display: "flex"}: {display: "none"} ) : {}} className={style.questionImg} src={plus} alt="plus" />
                         <img style={show0===false ? (true ? {display: "none"}: {display: "flex"} ) : {}} className={style.questionImg} src={x} alt="x" />
@@ -90,17 +90,15 @@ export function AboutServices() {
                     <p style={show0===true ?  {display: "flex"}: {display: "none"} }className={style.answer}>Tai pagalba, kurios reikia, kai mūsų planai nesusiklosto ir kai aplinkiniai paveda, priversdami vienus keliauti į renginius, koncertus, kino teatrus it t.t., nors taip norėtųsi draugijos... Tai palaikymas, kai siekiame gyventi pilnavertiškai, turėti galimybę dalintis savo patirtimi ir įspūdžiais su kitais, bei išbandyti naujas veiklas. Kai norime vėl švytėti, bet galbūt nedrąsu vieniems atrasti naujų įspūdžių, šis palaikymas yra ypač svarbus. Tai ir draugijos bei palaikymo ieškojimas, kai norime jaustis suprasti ir palaikomi net ir sunkiais momentais.</p>
                 </div>
           </div>
-          <div className="col-md-5">
-            <svg className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
-          </div>
+       
         </div>
         
         <hr className="featurette-divider"/>
         
-        <div className="row featurette">
+        <div className={style.questionContainertwo}>
           <div className="col-md-7 order-md-2">
-            <h2 className="featurette-heading fw-normal lh-1"> Paslaugos privalumai: <span className="text-body-secondary"> Bendrai leidžiamas laikas, Pramogos ir Veiklos, Emocinis palaikymas.</span></h2>
-            <div className={style.questionContainer}>
+            <h2 className="featurette-heading fw-normal lh-1"> Paslaugos privalumai: <span className={style.text}> Bendrai leidžiamas laikas, Pramogos ir Veiklos, Emocinis palaikymas.</span></h2>
+            <div  className="col-md-7">
                     <button onClick={() => hide1()} className={style.question}>Ši paslauga skirta tiems, kurie nori praleisti laiką su asmeniu, kuris rūpinasi jų gerove, veiklomis ir teikia emocinį palaikymą. Jei ieškote draugo, su kuriuo galėtumėte pasidalinti laisvalaikiu, užsiimti naujomis pramogomis ar tiesiog gauti palaikymą sunkiais momentais, „Draugas Draugui Draugas“ yra Jums.
                         <img style={show1===true ? (false ? {display: "flex"}: {display: "none"} ) : {}} className={style.questionImg} src={plus} alt="plus" />
                         <img style={show1===false ? (true ? {display: "none"}: {display: "flex"} ) : {}} className={style.questionImg} src={x} alt="x" />
@@ -108,17 +106,15 @@ export function AboutServices() {
                     <p style={show1===true ?  {display: "flex"}: {display: "none"} } className={style.answer}>Kai lyja, sninga, pučia ar saulė šviečia – Jūsų laikas ir emocinė gerovė yra svarbiausi. Aš siūlau unikalią paslaugą, kuri apima ne tik bendrą laiką kartu, bet ir pramogas bei emocinį palaikymą, atsižvelgiant į Jūsų poreikius ir nuotaiką. Kartu galime mėgautis įvairiomis veiklomis – nuo ramiai leidžiamo laiko gamtoje su kavos puodeliu iki įdomių kūrybinių dirbtuvių ar kultūrinių renginių, kurie praturtins Jūsų kasdienybę ir suteiks džiaugsmo. Taip pat aš visada čia, kad išklausyčiau, suteikčiau palaikymą ir patarimus, kad ir kokie būtų iššūkiai ar džiaugsmo akimirkos. Kiekvieną kartą, kai praleidžiame laiką kartu, aš siekiu ne tik sukurti malonias akimirkas, bet ir būti šalia, kai Jums reikia emocinio palaikymo ir tikro draugiškumo.</p>
                 </div>
           </div>
-          <div className="col-md-5 order-md-1">
-            <svg className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
-          </div>
+     
         </div>
         
         <hr className="featurette-divider"/>
         
-        <div className="row featurette">
+        <div className={style.questionContainerthree}>
           <div className="col-md-7">
-            <h2 className="featurette-heading fw-normal lh-1">Ir kodėl verta pasirinkti: <span className="text-body-secondary">"Draugas Draugui Draugas?</span></h2>
-            <div className={style.questionContainer}>
+            <h2 className="featurette-heading fw-normal lh-1">Ir kodėl verta pasirinkti: <span className={style.text}>"Draugas Draugui Draugas?</span></h2>
+            <div  className="col-md-7">
                     <button onClick={() => hide2()} className={style.question}> Nes „Draugas Draugui Draugas“ siūlo daugiau nei tiesiog paslaugą – tai asmeninis ryšys, kuris praturtina Jūsų gyvenimą. Kiekviena akimirka, kurią praleidžiame kartu, yra pritaikyta Jūsų poreikiams ir pageidavimams, kad galėtumėte jaustis ypatingi.
 
 
@@ -128,9 +124,7 @@ export function AboutServices() {
                     <p style={show2===true ?  {display: "flex"}: {display: "none"} } className={style.answer}>Ši paslauga pasižymi lankstumu ir individualiu požiūriu: galėsite pasirinkti veiklas ir bendro laiko planus, kurie geriausiai atitinka Jūsų nuotaiką ir interesus. Pirmasis susitikimas yra nemokamas, kad galėtumėte išbandyti, kaip mūsų paslauga atitinka Jūsų lūkesčius ir poreikius. Pasirinkę „Draugas Draugui Draugas“, Jūs ne tik gausite galimybę mėgautis pramogomis ir veiklomis, bet ir rasite tikrą draugą, kuris bus šalia tiek džiaugsmo, tiek iššūkių akimirkomis. Aš esu čia, kad suteikčiau Jums nuoširdų palaikymą, skatinti Jūsų gerovę ir padėsiu kurti prasmingus, laimingus gyvenimo momentus.</p>
                 </div>
           </div>
-          <div className="col-md-5">
-            <svg className="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
-          </div>
+         
         </div>
         
         <hr className="featurette-divider"/>

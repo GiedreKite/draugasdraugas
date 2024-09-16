@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
-import logo from '../../assets/react.svg';
+import logo from './draugas.png';
+import style from './Header.module.css'
 
 export function Header() {
     return (
-        <div className="container">
             <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
                 <div className="col-md-3 mb-2 mb-md-0">
                     <a href="/" className="d-inline-flex link-body-emphasis text-decoration-none">
-                        <img src={logo} alt="Logo" />
+                        <img className={style.img} src={logo} alt="Logo" />
                     </a>
                 </div>
 
@@ -25,7 +25,7 @@ export function Header() {
                         <Link to="/userslist" className="nav-link px-2">Vartotojų sąrašas</Link>
                     </li>
                     <li>
-                        <Link to="/user" className="nav-link px-2">Vartotojo informacija</Link>
+                        <Link to="/userinfo" className="nav-link px-2">Vartotojo informacija</Link>
                     </li>
                     <li>
                         <Link to="/404" className="nav-link px-2">404</Link>
@@ -37,6 +37,5 @@ export function Header() {
                     <Link to="/login" className="btn btn-primary">Registracija</Link>
                 </div>
             </header>
-        </div>
     );
 }

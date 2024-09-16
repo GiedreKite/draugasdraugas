@@ -9,3 +9,51 @@
     font-size: 2rem;
     padding: 2rem;
 }
+
+.carding {
+
+    background: url(http://localhost:5173/2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    
+}
+.card {
+
+    background: url(http://localhost:5173/4.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    height: 100%;
+    
+}
+.aline{
+    display: flex;
+    
+}
+.logo {
+    height: 400px;
+    width: 400px;
+}
+
+main{
+    background: url(http://localhost:5173/back.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    height: 100%;
+}
+@keyframes card-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .logo {
+      animation: card-spin infinite 20s linear;
+    }
+  }
