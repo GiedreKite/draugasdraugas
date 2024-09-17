@@ -19,7 +19,7 @@ export function App() {
         <Route path='/services' element={<ServicesListing />}></Route>
         <Route path='/userslist' element={<UsersListPage />}></Route>
         <Route path='/shoppingchart' element={<ShoppingChart/>}></Route>
-        <Route path='/users' element={<Register />}></Route>
+        <Route path='/register' element={<Register />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/singin' element={<SinginPage />}></Route>
         <Route path='*' element={<NotFound />}></Route>

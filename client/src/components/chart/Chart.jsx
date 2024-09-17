@@ -4,9 +4,8 @@ export default function Chart () {
     return (
       <main className="container">
         <div className="py-5 text-center">
-          <img className="d-block mx-auto mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57" />
           <h2>Paslaugų apmokėjimas</h2>
-          <p className="lead">Žemiau yra jūsų pasirinktų paslaugų krepšelis, bei reikalinga informacija apmokėjimui.</p>
+          <h6 className="lead">Žemiau yra jūsų pasirinktų paslaugų krepšelis, bei reikalinga informacija apmokėjimui.</h6>
         </div>
     
         <div className="row g-5">
@@ -23,8 +22,7 @@ export default function Chart () {
                 </div>
                 <span className="text-body-secondary">20 Eur</span>
               </li>
-            
-             
+           
               <li className="list-group-item d-flex justify-content-between">
                 <span>Viso (Eur)</span>
                 <strong>$20</strong>
@@ -32,6 +30,8 @@ export default function Chart () {
             </ul>
     
             <form className="card p-2">
+            <h6>Jūsų pageidavimai: </h6>
+            <p className="form-control">Jūsų pageidavimai: </p>
               <div className="input-group">
                 <input type="text" className="form-control" placeholder="Įveskite pageidavimus..." />
                 <button type="submit" className="btn btn-secondary">Patvirtinti</button>
