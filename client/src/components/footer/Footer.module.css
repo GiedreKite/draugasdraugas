@@ -18,10 +18,10 @@
       animation: card-spin infinite 20s linear;
     }
   }
-  footer{
+  /* footer{
     background: url(http://localhost:5173/back.png);
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
     height: 100%;
-}
+} */

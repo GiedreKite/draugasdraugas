@@ -28,7 +28,7 @@ export function Header() {
                         <Link to="/users" className="nav-link px-2">Vartotojo informacija</Link>
                     </li>
                     <li>
-                        <Link to="/shoppingchart" className="nav-link px-2">Pirkinių krepšelis</Link>
+                        <Link to="/chart" className="nav-link px-2">Pirkinių krepšelis</Link>
                     </li>
                     <li>
                         <Link to="/404" className="nav-link px-2">404</Link>

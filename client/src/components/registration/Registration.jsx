@@ -57,7 +57,7 @@ export default function Registration() {
         setSurnameError(surnameError);
 
         let repasswordError = '';
-        if (repassword !== password) {
+        if (repassword !== password ) {
             repasswordError = `Slaptažodžiai nesutampa`;
         } 
         setRepasswordError(repasswordError);
@@ -112,52 +112,52 @@ export default function Registration() {
                             <input value={username} onChange={e => setUsername(e.target.value.trim())}
                                 type="text" id="username" placeholder="Vartotojo vardas"
                                 className={'form-control ' + (isFormValidated ? usernameError ? 'is-invalid' : 'is-valid' : '')} />
-                            <label htmlFor="username">Spapyvardis</label>
+                            <label htmlFor="username">Vartotojo vardas</label>
                             {usernameError && <p className="invalid-feedback">{usernameError}</p>}
                         </div>
                         <div className="form-floating">
                             <input value={name} onChange={e => setName(e.target.value.trim())}
                                 type="text" id="name" placeholder="Vardas"
                                 className={'form-control ' + (isFormValidated ? nameError ? 'is-invalid' : 'is-valid' : '')} />
-                            <label htmlFor="name">Spapyvardis</label>
+                            <label htmlFor="name">Vardas</label>
                             {nameError && <p className="invalid-feedback">{nameError}</p>}
                         </div>
                         <div className="form-floating">
                             <input value={surname} onChange={e => setSurname(e.target.value.trim())}
                                 type="text" id="surname" placeholder="Pavardė"
                                 className={'form-control ' + (isFormValidated ? surnameError ? 'is-invalid' : 'is-valid' : '')} />
-                            <label htmlFor="surname">Spapyvardis</label>
+                            <label htmlFor="surname">Pavardė</label>
                             {surnameError && <p className="invalid-feedback">{surnameError}</p>}
                         </div>
                         <div className="form-floating">
                             <input value={phone} onChange={e => setPhone(e.target.value.trim())}
                                 type="text" id="phone" placeholder="Telefono numeris"
                                 className={'form-control ' + (isFormValidated ? phoneError ? 'is-invalid' : 'is-valid' : '')} />
-                            <label htmlFor="phone">Spapyvardis</label>
+                            <label htmlFor="phone">Telefono numeris</label>
                             {phoneError && <p className="invalid-feedback">{phoneError}</p>}
                         </div>
                         <div className="form-floating">
                             <input value={mail} onChange={e => setMail(e.target.value.trim())}
                                 type="mail" id="mail" placeholder="Elektroninis paštas"
                                 className={'form-control ' + (isFormValidated ? mailError ? 'is-invalid' : 'is-valid' : '')} />
-                            <label htmlFor="mail">Spapyvardis</label>
+                            <label htmlFor="mail">Elektroninis paštas</label>
                             {mailError && <p className="invalid-feedback">{mailError}</p>}
                         </div>
                    
                     
                         <div className="form-floating">
                             <input value={password} onChange={e => setPassword(e.target.value)}
-                                type="password" id="password" placeholder="Password"
+                                type="password" id="password" placeholder="Slaptažodis"
                                 className={'form-control ' + (isFormValidated ? passwordError ? 'is-invalid' : 'is-valid' : '')} />
-                            <label htmlFor="password">Spaltažodis</label>
+                            <label htmlFor="password">Slaptažodis</label>
                             {passwordError && <p className="invalid-feedback">{passwordError}</p>}
                         </div>
 
                         <div className="form-floating">
                             <input value={repassword} onChange={e => setRepassword(e.target.value)}
-                                type="repassword" id="repassword" placeholder="rePassword"
+                                type="repassword" id="repassword" placeholder="Pakartotinas slaptažodis"
                                 className={'form-control ' + (isFormValidated ? repasswordError ? 'is-invalid' : 'is-valid' : '')} />
-                            <label htmlFor="repassword">Spaltažodis</label>
+                            <label htmlFor="repassword">Pakartokite slaptažodį</label>
                             {repasswordError && <p className="invalid-feedback">{repasswordError}</p>}
                         </div>
 

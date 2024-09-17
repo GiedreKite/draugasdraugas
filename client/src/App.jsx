@@ -20,7 +20,7 @@ export function App() {
         <Route path='/services' element={<ServicesListing />}></Route>
         <Route path='/userslist' element={<UsersListPage />}></Route>
         <Route path='/users' element={<User/>}></Route>
-        <Route path='/shoppingchart' element={<ShoppingChart/>}></Route>
+        <Route path='/chart' element={<ShoppingChart/>}></Route>
         <Route path='/register' element={<Register />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/singin' element={<SinginPage />}></Route>

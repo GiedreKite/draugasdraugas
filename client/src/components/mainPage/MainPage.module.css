@@ -1,10 +1,10 @@
-main{
+/* main{
     background: url(http://localhost:5173/back.png);
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
     height: 100%;
-}
+} */
 .textConteiner{
     display: flex;
     flex-direction: column;
