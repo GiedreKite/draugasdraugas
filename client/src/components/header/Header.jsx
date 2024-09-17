@@ -37,7 +37,7 @@ export function Header() {
 
                 <div className="col-md-3 text-end">
                    <Link to="/singin" className="btn btn-outline-primary me-2">Prisijungti</Link>
-                    <Link to="/login" className="btn btn-primary">Registracija</Link>
+                    <Link to="/login" className="btn btn-outline-primary me-2">Registracija</Link>
                 </div>
             </header>
     );

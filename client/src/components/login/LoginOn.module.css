@@ -43,10 +43,10 @@ pre {
 }
 
 button {
-    background: rgba(0, 0, 131, 0.63)!important;
+    background:  #79797999!important;
     padding: 5px;
     border-radius: 10px;
-    width: 30%;
+   
 }
 
 p {

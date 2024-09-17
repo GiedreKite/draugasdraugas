@@ -52,10 +52,10 @@
     border-radius: 1rem;
   }
   button:hover{
-    filter: drop-shadow(0 0 2em #646cffaa);
+    filter: drop-shadow(0 0 2em #79797999);
   }
   .card:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
+    filter: drop-shadow(0 0 2em #79797999);
   }
   
   

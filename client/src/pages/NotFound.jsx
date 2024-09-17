@@ -1,5 +1,7 @@
 import { Footer } from "../components/footer/Footer";
 import { Header } from "../components/header/Header";
+import { Notexist } from "../components/notexist/Notexist";
+
 
 export function NotFound() {
     return (
@@ -8,10 +10,7 @@ export function NotFound() {
             <main>
                 <div className="container">
                     <div className="row">
-                        <div className="col-12">
-                            <h1>404</h1>
-                            <p>Page not found</p>
-                        </div>
+                        <Notexist/>
                     </div>
                 </div>
             </main>
