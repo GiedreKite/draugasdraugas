@@ -8,6 +8,7 @@ import { SinginPage } from './pages/SinginPage';
 import { About } from './pages/About';
 import { ServicesListing } from './pages/ServicesListing';
 import { ShoppingChart } from './pages/ShoppingChart';
+import { User } from './pages/User';
 // import style from './App.css'
 
 export function App() {
@@ -18,6 +19,7 @@ export function App() {
         <Route path='/about' element={<About/>}></Route>
         <Route path='/services' element={<ServicesListing />}></Route>
         <Route path='/userslist' element={<UsersListPage />}></Route>
+        <Route path='/users' element={<User/>}></Route>
         <Route path='/shoppingchart' element={<ShoppingChart/>}></Route>
         <Route path='/register' element={<Register />}></Route>
         <Route path='/login' element={<Login />}></Route>

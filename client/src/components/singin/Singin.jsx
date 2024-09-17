@@ -1,113 +1,86 @@
-import { useState, useEffect } from "react";
-import style from './Singin.module.css'
+// import style from './Registration.module.css'
 
-function Singin() {
-    const initialValues = {
-        username: "",
-        email: "",
-        password: "",
-    };
-    const [formValues, setFormValues] = useState(initialValues);
-    const [formErrors, setFormErrors] = useState({});
-    const [isSubmit, setIsSubmit] = useState(false);
+import { useState } from "react";
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormValues({ ...formValues, [name]: value });
-    };
+export default function Singin() {
+  
 
-    const handleSubmit = (e) => {
+    const [username, setUsername] = useState('');
+
+    const [usernameError, setUsernameError] = useState('');
+
+    const [password, setPassword] = useState('');
+    const [passwordError, setPasswordError] = useState('');
+    
+    const [isFormValidated, setIsFormValidated] = useState(false);
+
+    async function submitForm(e) {
         e.preventDefault();
-        setFormErrors(validate(formValues));
-        setIsSubmit(true);
-    };
 
-    useEffect(() => {
-        console.log(formErrors);
-        if (Object.keys(formErrors).length === 0 && isSubmit) {
-            console.log(formValues);
-        }
-    }, [formErrors, formValues, isSubmit]);
-    const validate = (values) => {
-        const errors = {};
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-        if (!values.username) {
-            errors.username = "Username is required!";
-        }
-        if (!values.email) {
-            errors.email = "Email is required!";
-        } else if (!regex.test(values.email)) {
-            errors.email = "This is not a valid email format!";
-        }
-        if (!values.password) {
-            errors.password = "Password is required";
-        } else if (values.password.length < 4) {
-            errors.password = "Password must be more than 4 characters";
-        } else if (values.password.length > 10) {
-            errors.password = "Password cannot exceed more than 10 characters";
-        }
-        return errors;
-    };
+        setIsFormValidated(true);
 
-    return (
-        <>
-            <div className="bgImg"></div>
-            <div className={style.container}>
-                {Object.keys(formErrors).length === 0 && isSubmit ? (
-                    <div className="ui message success">
-                       Prisijungta sėkmingai
-                    </div>
-                ) : (
-                    console.log("Entered Details", formValues)
-                )}
 
-                <form onSubmit={handleSubmit}>
-                    <h1>Prisijungti</h1>
-                    <div className="ui divider"></div>
-                    <div className="ui form">
-                        <div className="field">
-                            <label>Username</label>
-                            <input
-                                type="text"
-                                name="username"
-                                placeholder="Choose a username"
-                                value={formValues.username}
-                                onChange={handleChange}
-                            />
+
+       
+            const resp = await fetch('http://localhost:5026/api/singin', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username,
+                    password,
+                }),
+            });
+            console.log(resp);
+
+            if(resp.ok){
+                //duomenis nuskaitom, nueinam i norima puslapi
+                //data=resp.json()
+                //user = data['data']
+                //message = data['message']
+                window.location="/";
+                console.log('Pavyko');
+                
+            }
+            else{
+                //error=resp.text()
+                console.log(resp.text());
+            }
+        }
+    
+
+
+    return <>
+                <div className="row">
+                    <form onSubmit={submitForm} className="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+                        <h1 className="h3 mb-3 fw-normal">Prisijungimas</h1>
+
+                        <div className="form-floating">
+                            <input value={username} onChange={e => setUsername(e.target.value.trim())}
+                                type="text" id="username" placeholder="Vartotojo vardas"
+                                className={'form-control ' + (isFormValidated ? usernameError ? 'is-invalid' : 'is-valid' : '')} />
+                            <label htmlFor="username">Spapyvardis</label>
+                            {usernameError && <p className="invalid-feedback">{usernameError}</p>}
                         </div>
-                        <p>{formErrors.username}</p>
-                        <div className="field">
-                            <label>Email</label>
-                            <input
-                                type="text"
-                                name="email"
-                                placeholder="Email"
-                                value={formValues.email}
-                                onChange={handleChange}
-                            />
+                        
+                           
+                    
+                        <div className="form-floating">
+                            <input value={password} onChange={e => setPassword(e.target.value)}
+                                type="password" id="password" placeholder="Password"
+                                className={'form-control ' + (isFormValidated ? passwordError ? 'is-invalid' : 'is-valid' : '')} />
+                            <label htmlFor="password">Spaltažodis</label>
+                            {passwordError && <p className="invalid-feedback">{passwordError}</p>}
                         </div>
-                        <p>{formErrors.email}</p>
-                        <div className="field">
-                            <label>Password</label>
-                            <input
-                                type="password"
-                                name="password"
-                                placeholder="Password"
-                                value={formValues.password}
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <p>{formErrors.password}</p>
 
-                        <button className="fluid ui button blue">Submit</button>
-                    </div>
-                </form>
-                <div className="text">
-                    Malonaus naršymo ;)
+                    
+                        <button className="btn btn-primary w-100 py-2 mt-3" type="submit">Registruotis</button>
+                    </form>
                 </div>
-            </div>{" "}
-        </>
-    );
+  
+    
+    
+   
+    </>
 }
-
-export default Singin;
