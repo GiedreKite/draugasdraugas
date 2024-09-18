@@ -97,6 +97,10 @@ export default function Registration() {
                 body: JSON.stringify({
                     username,
                     password,
+                    name,
+                    surname,
+                    phone,
+                    mail,
                 }),
             });
         }

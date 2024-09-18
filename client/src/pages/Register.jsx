@@ -1,7 +1,7 @@
 import { Footer } from "../components/footer/Footer";
 import { Header } from "../components/header/Header";
 import Registration from "../components/registration/Registration";
-import { UserInfo } from "../components/user/UserInfo";
+
 
 
 export function Register() {

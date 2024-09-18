@@ -1,6 +1,11 @@
 import { connection } from '../../db.js';
 import express from 'express'
-import { isValidPassword, isValidUsername } from '../../lib/isValid.js';
+import { nameCheck } from '../../lib/nameCheck.js';
+import { surnameCheck } from '../../lib/surnameCheck.js';
+import { passCheck } from '../../lib/passCheck.js';
+import { phoneCheck } from '../../lib/phoneCheck.js';
+import { mailCheck } from '../../lib/mailCheck.js';
+import { usernameCheck } from '../../lib/usernameCheck.js';
 
 export const registerAPIrouter = express.Router();
 
@@ -24,7 +29,7 @@ async function postRegister(req, res) {
         });
     }
 
-    const requiredFields = ['username', 'password'];
+    const requiredFields = ['username', 'password', 'name', 'surname', 'phone', 'mail'];
 
     if (Object.keys(req.body).length !== requiredFields.length) {
         return res.json({
@@ -33,27 +38,59 @@ async function postRegister(req, res) {
         });
     }
 
-    const { username, password } = req.body;
+    const { username, password, name, surname, phone, mail } = req.body;
 
-    const usernameError = isValidUsername(username);
-    if (usernameError) {
+    const usernameError = usernameCheck(username);
+    if (usernameError !== '') {
         return res.json({
             status: 'error',
-            data: usernameError,
+            message: usernameError,
+        });
+    } 
+    const nameError = nameCheck(name);
+    if (nameError !== '') {
+        return res.json({
+            status: 'error',
+            message: nameError,
+        });
+    } 
+    if (name === surname) {
+        errorMessage = 'Vardas ir pavardė negali sutapti';}
+
+    const surnameError = surnameCheck(surname);
+    if (surnameError !== '') {
+        return res.json({
+            status: 'error',
+            message: surnameError,
+        });
+    }
+    const mailError = mailCheck(mail);
+    if (mailError !== '') {
+        return res.json({
+            status: 'error',
+            message: mailError,
+        });
+    }
+    const passError = passCheck(password);
+    if (passError !== '') {
+        return res.json({
+            status: 'error',
+            message: passError,
+        });
+    }
+    const phoneError = phoneCheck(phone);
+    if (phoneError !== '') {
+        return res.json({
+            status: 'error',
+            message: phoneError,
         });
     }
 
-    const passwordError = isValidPassword(password);
-    if (passwordError) {
-        return res.json({
-            status: 'error',
-            data: passwordError,
-        });
-    }
+ 
 
 
     try {
-        const sql = 'INSERT INTO users (username, password) VALUES (?, ?);';
+        const sql = 'INSERT INTO users (username, password, name, surname, phone, mail) VALUES (?, ?);';
         const result = await connection.execute(sql, [username, password]);
 
         if (result[0].affectedRows !== 1) {
