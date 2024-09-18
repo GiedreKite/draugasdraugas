@@ -6,9 +6,9 @@ export default function UsersList() {
 
     
     <main>
-                <div class="flex">
+                <div className="flex">
                     <h1>Visos paskyros</h1>
-                    <a class="btn" href="/create-account">+ Nauja</a>
+                    <a className="btn" href="/create-account">+ Nauja</a>
                 </div>
                 <table>
                     <thead>

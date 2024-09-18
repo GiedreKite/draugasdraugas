@@ -31,8 +31,9 @@ export function ServicesListing() {
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                            <h1>Paslaugų sąrašas:</h1>
-                            <p>Prašau pasirinkti paslaugą!</p>
+            
+                            <h1 className='film'>Paslaugų sąrašas:</h1>
+                            <h3 className='film'>Prašau pasirinkti paslaugą!</h3>
                         </div>
                     </div>
                 </div>

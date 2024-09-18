@@ -1,4 +1,15 @@
+header{
+  position: sticky!important;
+  top: 0!important;
+  height: 5rem!important;
+  background-color: rgba(245, 245, 245, 0.642);
+  margin: 0!important;
+  padding: 0!important;
+}
+
 .mainHeader {
+
+  
     display: flex;
     justify-content: space-between;
 }

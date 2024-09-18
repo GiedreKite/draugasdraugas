@@ -43,24 +43,7 @@ export function AboutServices() {
             setShow3(false)
         }}
         
-
-        const [name, setName] = useState('');
-        const [surname, setSurname] = useState('');
-        const [birthYear, setBirthYear] = useState('');
-        const [birthMonth, setBirthMonth] = useState('');
-        const [birthDay, setBirthDay] = useState('');
-        const [mail, setMail] = useState('');
-        const [phone, setPhone] = useState('');
-        const [pass, setPass] = useState('');
-        const [password, setPassword] = useState('');
-
-        function handleFormSubmit(e) {
-            e.preventDefault();
-    
-            if (task.trim() === "") {
-                return;
-            }
-        }
+     
         
         const [show00, setShow00] = useState(false);
         function hide00() {
@@ -81,9 +64,9 @@ export function AboutServices() {
         
         <div className={style.questionContainerone}>
           <div className="col-md-7">
-            <h2 className="featurette-heading fw-normal lh-1"> „Draugas Draugui Draugas“ - <span className={style.text}>Asmeninis Laikas ir Palaikymas.</span></h2>
+            <h2 className="featurette-heading fw-normal lh-1"> „Draugas Draugui Draugas“ - <strong>Asmeninis Laikas ir Palaikymas.</strong><span className={style.text}></span></h2>
             <div  className="col-md-7">
-                    <button onClick={() => hide0()} className={style.question}>„Draugas Draugui“ – tai asmeninė paslauga, skirta tiems, kurie ieško kokybiško laiko. Kaip Jūsų asmeninė draugė, aš siūlau Jums unikalią patirtį, apimančią pramogas, bendravimą ir emocinį palaikymą. 
+                    <button onClick={() => hide0()} className={style.question}>„Draugas Draugui“ –<strong></strong> tai asmeninė paslauga, skirta tiems, kurie ieško kokybiško laiko. Kaip Jūsų asmeninė draugė, aš siūlau Jums unikalią patirtį, apimančią pramogas, bendravimą ir emocinį palaikymą. 
                         <img style={show0===true ? (false ? {display: "flex"}: {display: "none"} ) : {}} className={style.questionImg} src={plus} alt="plus" />
                         <img style={show0===false ? (true ? {display: "none"}: {display: "flex"} ) : {}} className={style.questionImg} src={x} alt="x" />
                     </button>
@@ -97,7 +80,7 @@ export function AboutServices() {
         
         <div className={style.questionContainertwo}>
           <div className="col-md-7 order-md-2">
-            <h2 className="featurette-heading fw-normal lh-1"> Paslaugos privalumai: <span className={style.text}> Bendrai leidžiamas laikas, Pramogos ir Veiklos, Emocinis palaikymas.</span></h2>
+            <h2 className="featurette-heading fw-normal lh-1"> Paslaugos privalumai: <strong>Bendrai leidžiamas laikas, Pramogos ir Veiklos, Emocinis palaikymas.</strong><span className={style.text}> </span></h2>
             <div  className="col-md-7">
                     <button onClick={() => hide1()} className={style.question}>Ši paslauga skirta tiems, kurie nori praleisti laiką su asmeniu, kuris rūpinasi jų gerove, veiklomis ir teikia emocinį palaikymą. Jei ieškote draugo, su kuriuo galėtumėte pasidalinti laisvalaikiu, užsiimti naujomis pramogomis ar tiesiog gauti palaikymą sunkiais momentais, „Draugas Draugui Draugas“ yra Jums.
                         <img style={show1===true ? (false ? {display: "flex"}: {display: "none"} ) : {}} className={style.questionImg} src={plus} alt="plus" />
@@ -113,7 +96,7 @@ export function AboutServices() {
         
         <div className={style.questionContainerthree}>
           <div className="col-md-7">
-            <h2 className="featurette-heading fw-normal lh-1">Ir kodėl verta pasirinkti: <span className={style.text}>"Draugas Draugui Draugas?</span></h2>
+            <h2 className="featurette-heading fw-normal lh-1">Ir kodėl verta pasirinkti: <strong>"Draugas Draugui Draugas?</strong><span className={style.text}></span></h2>
             <div  className="col-md-7">
                     <button onClick={() => hide2()} className={style.question}> Nes „Draugas Draugui Draugas“ siūlo daugiau nei tiesiog paslaugą – tai asmeninis ryšys, kuris praturtina Jūsų gyvenimą. Kiekviena akimirka, kurią praleidžiame kartu, yra pritaikyta Jūsų poreikiams ir pageidavimams, kad galėtumėte jaustis ypatingi.
 

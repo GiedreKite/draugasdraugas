@@ -1,11 +1,6 @@
 import { connection } from '../../db.js';
 import express from 'express'
-import { nameCheck } from '../../lib/nameCheck.js';
-import { surnameCheck } from '../../lib/surnameCheck.js';
-import { passCheck } from '../../lib/passCheck.js';
-import { phoneCheck } from '../../lib/phoneCheck.js';
-import { mailCheck } from '../../lib/mailCheck.js';
-import { usernameCheck } from '../../lib/usernameCheck.js';
+import { isValid } from '../../lib/isValid.js';
 
 export const serviceAPIrouter = express.Router();
 
@@ -40,58 +35,44 @@ async function postservice(req, res) {
 
     const { name, about, price, img } = req.body;
 
-    const usernameError = usernameCheck(username);
-    if (usernameError !== '') {
-        return res.json({
-            status: 'error',
-            data: usernameError,
-        });
-    } 
-    const nameError = nameCheck(name);
+
+    const nameError = isValid(name);
     if (nameError !== '') {
         return res.json({
             status: 'error',
             data: nameError,
         });
     } 
-    if (name === surname) {
-        errordata = 'Vardas ir pavardė negali sutapti';}
 
-    const surnameError = surnameCheck(surname);
-    if (surnameError !== '') {
+    const aboutError = isValid(about);
+    if (aboutError !== '') {
         return res.json({
             status: 'error',
-            data: surnameError,
+            data: aboutError,
         });
     }
-    const mailError = mailCheck(mail);
-    if (mailError !== '') {
+    const priceError = isValid(price);
+    if (priceError !== '') {
         return res.json({
             status: 'error',
-            data: mailError,
+            data: priceError,
         });
     }
-    const passError = passCheck(password);
-    if (passError !== '') {
+    const imgError = isValid(img);
+    if (imgError !== '') {
         return res.json({
             status: 'error',
-            data: passError,
+            data: imgError,
         });
     }
-    const phoneError = phoneCheck(phone);
-    if (phoneError !== '') {
-        return res.json({
-            status: 'error',
-            data: phoneError,
-        });
-    }
+
 
  
 
 
     try {
-        const sql = 'INSERT INTO users (username, name, surname, phone, mail, password) VALUES (?, ?, ?, ?, ?, ?);';
-        const result = await connection.execute(sql, [username, password, name, surname, phone, mail, password]);
+        const sql = 'INSERT INTO users (name, about, price, img) VALUES (?, ?, ?, ?);';
+        const result = await connection.execute(sql, [name, about, price, img ]);
 
         if (result[0].affectedRows !== 1) {
             return res.json({

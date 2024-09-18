@@ -3,38 +3,60 @@
 import { useState } from "react";
 
 export default function Singin() {
-  
+    const minUsernameLength = 3;
+    const maxUsernameLength = 20;
+    const minPasswordLength = 12;
+    const maxPasswordLength = 100;
 
     const [username, setUsername] = useState('');
-
     const [usernameError, setUsernameError] = useState('');
-
     const [password, setPassword] = useState('');
     const [passwordError, setPasswordError] = useState('');
-    
     const [isFormValidated, setIsFormValidated] = useState(false);
+    const [apiResponse, setApiResponse] = useState(null);
+
 
     async function submitForm(e) {
+
+
         e.preventDefault();
 
         setIsFormValidated(true);
 
+        let usernameError = '';
+        if (username.length < minUsernameLength) {
+            usernameError = `Slapyvardis yra per trumpas, turi būti minimum ${minUsernameLength} simbolių`;
+        } else if (username.length > maxUsernameLength) {
+            usernameError = `Slapyvardis yra per ilgas, turi būti maximum ${maxUsernameLength} simbolių`;
+        }
+        setUsernameError(usernameError);
 
+        let passwordError = '';
+        if (password.length < minPasswordLength) {
+            passwordError = `Slaptažodis yra per trumpas, turi būti minimum ${minPasswordLength} simbolių`;
+        } else if (password.length > maxPasswordLength) {
+            passwordError = `Slaptažodis yra per ilgas, turi būti maximum ${maxPasswordLength} simbolių`;
+        }
+        setPasswordError(passwordError);
 
-       
-            const resp = await fetch('http://localhost:5026/api/singin', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    username,
-                    password,
-                }),
-            });
-            console.log(resp);
+        if (!usernameError && !passwordError) {
 
-            if(resp.ok){
+            fetch('http://localhost:5028/api/login', {
+              method: 'POST',
+              headers: {
+                'Content-Type':'application/json',
+              },
+              body: JSON.stringify({
+                username, 
+                password,
+              })
+            })
+
+            .then(res => res.json())
+          .then(data => setApiResponse(data))
+          .catch(err => console.error(err))
+            console.log('siunciame duomenis i serveri registracijai...');
+        }else {
                 //duomenis nuskaitom, nueinam i norima puslapi
                 //data=resp.json()
                 //user = data['data']
@@ -43,10 +65,7 @@ export default function Singin() {
                 console.log('Pavyko');
                 
             }
-            else{
-                //error=resp.text()
-                console.log(resp.text());
-            }
+        
         }
     
 
@@ -56,11 +75,16 @@ export default function Singin() {
                     <form onSubmit={submitForm} className="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
                         <h1 className="h3 mb-3 fw-normal">Prisijungimas</h1>
 
+
+                        {apiResponse && apiResponse.status === `success` ? <p className="alert alert-success">{apiResponse.data}</p> : null}
+                        {apiResponse && apiResponse.status === `error` ? <p className="alert alert-danger">{apiResponse.data}</p> : null}
+     
+
                         <div className="form-floating">
                             <input value={username} onChange={e => setUsername(e.target.value.trim())}
                                 type="text" id="username" placeholder="Vartotojo vardas"
                                 className={'form-control ' + (isFormValidated ? usernameError ? 'is-invalid' : 'is-valid' : '')} />
-                            <label htmlFor="username">Spapyvardis</label>
+                            <label htmlFor="username">Vartotojo vardas</label>
                             {usernameError && <p className="invalid-feedback">{usernameError}</p>}
                         </div>
                         
@@ -70,12 +94,12 @@ export default function Singin() {
                             <input value={password} onChange={e => setPassword(e.target.value)}
                                 type="password" id="password" placeholder="Password"
                                 className={'form-control ' + (isFormValidated ? passwordError ? 'is-invalid' : 'is-valid' : '')} />
-                            <label htmlFor="password">Spaltažodis</label>
+                            <label htmlFor="password">Slaptažodis</label>
                             {passwordError && <p className="invalid-feedback">{passwordError}</p>}
                         </div>
 
                     
-                        <button className="btn btn-primary w-100 py-2 mt-3" type="submit">Registruotis</button>
+                        <button className="btn btn-primary w-100 py-2 mt-3" type="submit">Prisijungti</button>
                     </form>
                 </div>
   

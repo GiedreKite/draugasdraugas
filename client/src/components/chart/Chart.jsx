@@ -40,10 +40,10 @@ export default function Chart () {
           </div>
           <div className="col-md-7 col-lg-8">
             <h4 className="mb-3">Paslaugos pirkėjas</h4>
-            <form className="needs-validation" novalidate="">
+            <form className="needs-validation" noValidate="">
               <div className="row g-3">
                 <div className="col-sm-6">
-                  <label for="firstName" className="form-label">Vardas</label>
+                  <label htmlFor="firstName" className="form-label">Vardas</label>
                   <input type="text" className="form-control" id="firstName" placeholder="" value="" required="" />
                   <div className="invalid-feedback">
                     Reikalingas vartotojo vardas
@@ -52,7 +52,7 @@ export default function Chart () {
                 
     
                 <div className="col-sm-6">
-                  <label for="lastName" className="form-label">Pavardė</label>
+                  <label htmlFor="lastName" className="form-label">Pavardė</label>
                   <input type="text" className="form-control" id="lastName" placeholder="" value="" required="" />
                   <div className="invalid-feedback">
                    Reikalinga vartotojo pavardė
@@ -60,7 +60,7 @@ export default function Chart () {
                 </div>
     
                 <div className="col-12">
-                  <label for="username" className="form-label">Vartotojo vardas</label>
+                  <label htmlFor="username" className="form-label">Vartotojo vardas</label>
                   <div className="input-group has-validation">
                     <span className="input-group-text">@</span>
                     <input type="text" className="form-control" id="username" placeholder="Username" required="" />
@@ -79,21 +79,21 @@ export default function Chart () {
               <div className="my-3">
                 <div className="form-check">
                   <input id="credit" name="paymentMethod" type="radio" className="form-check-input"  required="" />
-                  <label className="form-check-label" for="credit">Kreditinė kortelė</label>
+                  <label className="form-check-label" htmlFor="credit">Kreditinė kortelė</label>
                 </div>
                 <div className="form-check">
                   <input id="debit" name="paymentMethod" type="radio" className="form-check-input" required="" />
-                  <label className="form-check-label" for="debit">Debetinė kortelė</label>
+                  <label className="form-check-label" htmlFor="debit">Debetinė kortelė</label>
                 </div>
                 <div className="form-check">
                   <input id="paypal" name="paymentMethod" type="radio" className="form-check-input" required="" />
-                  <label className="form-check-label" for="paypal">PayPal</label>
+                  <label className="form-check-label" htmlFor="paypal">PayPal</label>
                 </div>
               </div>
     
               <div className="row gy-3">
                 <div className="col-md-6">
-                  <label for="cc-name" className="form-label">Kortelės pavadinimas</label>
+                  <label htmlFor="cc-name" className="form-label">Kortelės pavadinimas</label>
                   <input type="text" className="form-control" id="cc-name" placeholder="" required="" />
                   <small className="text-body-secondary">Pilnas vardas</small>
                   <div className="invalid-feedback">
@@ -102,7 +102,7 @@ export default function Chart () {
                 </div>
     
                 <div className="col-md-6">
-                  <label for="cc-number" className="form-label">Kortelės numeris: </label>
+                  <label htmlFor="cc-number" className="form-label">Kortelės numeris: </label>
                   <input type="text" className="form-control" id="cc-number" placeholder="" required="" />
                   <div className="invalid-feedback">
                    Kortelės numeris:
@@ -110,7 +110,7 @@ export default function Chart () {
                 </div>
     
                 <div className="col-md-3">
-                  <label for="cc-expiration" className="form-label">Galiojimas</label>
+                  <label htmlFor="cc-expiration" className="form-label">Galiojimas</label>
                   <input type="text" className="form-control" id="cc-expiration" placeholder="" required="" />
                   <div className="invalid-feedback">
                     Kortelės galiojimo terminas: 
@@ -118,7 +118,7 @@ export default function Chart () {
                 </div>
     
                 <div className="col-md-3">
-                  <label for="cc-cvv" className="form-label">CVV</label>
+                  <label htmlFor="cc-cvv" className="form-label">CVV</label>
                   <input type="text" className="form-control" id="cc-cvv" placeholder="" required="" />
                   <div className="invalid-feedback">
                     Kortelės apsaugos kodas

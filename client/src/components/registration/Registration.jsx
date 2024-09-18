@@ -11,6 +11,7 @@ export default function Registration() {
     const minPhoneLength = 7;
     const maxPhoneLength = 15;
 
+    const [apiResponse, setApiResponse] = useState(null);
     const [username, setUsername] = useState('');
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
@@ -102,8 +103,14 @@ export default function Registration() {
                     phone,
                     mail,
                 }),
-            });
-        }
+            })
+
+            .then(res => res.json())
+            .then(data => setApiResponse(data))
+            .catch(err => console.error(err))
+              console.log('siunciame duomenis i serveri registracijai...')
+          }
+        
     }
 
 
@@ -111,7 +118,8 @@ export default function Registration() {
                 <div className="row">
                     <form onSubmit={submitForm} className="col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
                         <h1 className="h3 mb-3 fw-normal">Registracija</h1>
-
+                        {apiResponse && apiResponse.status === `success` ? <p className="alert alert-success">{apiResponse.data}</p> : null}
+                        {apiResponse && apiResponse.status === `error` ? <p className="alert alert-danger">{apiResponse.data}</p> : null}
                         <div className="form-floating">
                             <input value={username} onChange={e => setUsername(e.target.value.trim())}
                                 type="text" id="username" placeholder="Vartotojo vardas"
@@ -168,9 +176,6 @@ export default function Registration() {
                         <button className="btn btn-primary w-100 py-2 mt-3" type="submit">Registruotis</button>
                     </form>
                 </div>
-  
-    
-    
    
     </>
 }

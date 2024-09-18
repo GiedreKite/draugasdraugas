@@ -10,6 +10,7 @@ import { ServicesListing } from './pages/ServicesListing';
 import { ShoppingChart } from './pages/ShoppingChart';
 import { User } from './pages/User';
 import { ServiceCreate } from './pages/ServiceCreate';
+import "./index.css";
 // import style from './App.css'
 
 export function App() {
