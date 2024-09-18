@@ -7,18 +7,18 @@ import { phoneCheck } from '../../lib/phoneCheck.js';
 import { mailCheck } from '../../lib/mailCheck.js';
 import { usernameCheck } from '../../lib/usernameCheck.js';
 
-export const registerAPIrouter = express.Router();
+export const serviceAPIrouter = express.Router();
 
-registerAPIrouter.post('/', postRegister);
+serviceAPIrouter.post('/', postservice);
 
-registerAPIrouter.use((req, res) => {
+serviceAPIrouter.use((req, res) => {
     return res.json({
         status: 'error',
-        data: 'Toks HTTP metodas /api/register nepalaikomas',
+        data: 'Toks HTTP metodas /api/service nepalaikomas',
     });
 });
 
-async function postRegister(req, res) {
+async function postservice(req, res) {
     if (typeof req.body !== 'object'
         || Array.isArray(req.body)
         || req.body === null
@@ -29,7 +29,7 @@ async function postRegister(req, res) {
         });
     }
 
-    const requiredFields = ['username', 'password', 'name', 'surname', 'phone', 'mail'];
+    const requiredFields = ['name', 'about', 'price', 'img'];
 
     if (Object.keys(req.body).length !== requiredFields.length) {
         return res.json({
@@ -38,7 +38,7 @@ async function postRegister(req, res) {
         });
     }
 
-    const { username, password, name, surname, phone, mail } = req.body;
+    const { name, about, price, img } = req.body;
 
     const usernameError = usernameCheck(username);
     if (usernameError !== '') {

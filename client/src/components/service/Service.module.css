@@ -1,0 +1,37 @@
+/* table {
+    border-spacing: 0 0.5rem!important;
+  }
+  
+
+  thead td {
+    padding: 1rem!important;
+    text-transform: uppercase!important;
+    font-weight: bold!important;
+    font-size: 0.8rem!important;
+    border-bottom: 0.2rem solid black!important;
+  }
+  
+  tbody {
+    border-spacing: 1rem!important;
+  }
+  tbody tr {
+    background-color: rgba(0, 0, 0, 0.05)!important;
+  }
+  tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.2)!important;
+  }
+  tbody td {
+    margin-bottom: 2rem!important;
+    padding: 1rem!important;
+  }
+  tbody td:first-child {
+    border-radius: 1rem 0 0 1rem!important;
+  }
+  tbody td:last-child {
+    border-radius: 0 1rem 1rem 0!important;
+  }
+  tbody td div {
+    display: flex!important;
+    align-items: center!important;
+    gap: 1rem!important;
+  } */

@@ -16,6 +16,9 @@ export function Header() {
                         <Link to="/" className="nav-link px-2 link-secondary">Home</Link>
                     </li>
                     <li>
+                        <Link to="/service" className="nav-link px-2 link-secondary">Sukurti paslaugą</Link>
+                    </li>
+                    <li>
                         <Link to="/about" className="nav-link px-2 link-secondary">Apžvalga</Link>
                     </li>
                     <li>

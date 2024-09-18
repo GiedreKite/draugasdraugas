@@ -9,6 +9,7 @@ import { About } from './pages/About';
 import { ServicesListing } from './pages/ServicesListing';
 import { ShoppingChart } from './pages/ShoppingChart';
 import { User } from './pages/User';
+import { ServiceCreate } from './pages/ServiceCreate';
 // import style from './App.css'
 
 export function App() {
@@ -18,6 +19,7 @@ export function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/about' element={<About/>}></Route>
         <Route path='/services' element={<ServicesListing />}></Route>
+        <Route path='/service' element={<ServiceCreate />}></Route>
         <Route path='/userslist' element={<UsersListPage />}></Route>
         <Route path='/users' element={<User/>}></Route>
         <Route path='/chart' element={<ShoppingChart/>}></Route>
