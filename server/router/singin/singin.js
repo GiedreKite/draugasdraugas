@@ -4,7 +4,9 @@ import { isValidPassword, isValidUsername } from '../../lib/isValid.js';
 
 export const singinAPIrouter = express.Router();
 
+
 singinAPIrouter.post('/', postSingin);
+singinAPIrouter.get('/', getSingin);
 
 singinAPIrouter.use((req, res) => {
     return res.json({
@@ -12,6 +14,31 @@ singinAPIrouter.use((req, res) => {
         data: 'Toks HTTP metodas /api/singin nepalaikomas',
     });
 });
+
+
+async function getSingin(req, res) {
+    const coockies = req
+    .headers
+    .cookie
+    .split(';')
+    .map(s => s.trim().split('='))
+    .reduce((total, item) => ({...total, [item[0]]: item[1] }), {})
+
+    console.log(req.headers.cookie)
+//     if (typeof req.body !== 'object'
+//         || Array.isArray(req.body)
+//         || req.body === null
+//     ) {
+//         return res.json({
+//             status: 'error',
+//             msg: 'Pagrindinis duomenu tipas turi buti objektas',
+//         });
+//     }   
+return res.json({
+            status: 'succsess',
+            msg: 'Pavyko',
+        });
+}
 
 async function postSingin(req, res) {
     if (typeof req.body !== 'object'

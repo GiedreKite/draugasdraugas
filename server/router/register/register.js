@@ -91,7 +91,7 @@ async function postRegister(req, res) {
 
     try {
         const sql = 'INSERT INTO users (username, name, surname, phone, mail, password) VALUES (?, ?, ?, ?, ?, ?);';
-        const result = await connection.execute(sql, [username, password, name, surname, phone, mail, password]);
+        const result = await connection.execute(sql, [username, name, surname, phone, mail, password]);
 
         if (result[0].affectedRows !== 1) {
             return res.json({
@@ -100,6 +100,7 @@ async function postRegister(req, res) {
             });
         }
     } catch (error) {
+        console.log(error)
         return res.json({
             status: 'error',
             data: 'Del techniniu kliuciu nepavyko ivykdyti registracijos proceso, pabandykite veliau',

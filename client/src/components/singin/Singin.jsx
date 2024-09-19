@@ -2,6 +2,7 @@
 
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { GlobalContext } from "../../context/GlobalContext";
 
 export default function Singin() {
     const {changeLoginStatus} = useContext(GlobalContext)
@@ -45,7 +46,7 @@ export default function Singin() {
         setPasswordError(passwordError);
 
         if (!usernameError && !passwordError) {
-            fetch('http://localhost:5028/api/login', {
+            fetch('http://localhost:5026/api/singin', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

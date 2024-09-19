@@ -13,7 +13,7 @@ export function GlobalContextWrapper(props) {
     const [isLogedIn, setisLogedIn] = useState(initialContext.isLogedIn);
 
 useEffect(() => {
-    fetch('htttp://localhost:5028/api/login', {
+    fetch('http://localhost:5026/api/login', {
         method: 'GET',
         credentials:'include',
     })

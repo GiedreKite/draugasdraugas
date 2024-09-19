@@ -1,6 +1,7 @@
 // import style from './Registration.module.css'
 
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Registration() {
     const minUsernameLength = 3;
@@ -10,6 +11,8 @@ export default function Registration() {
     const maxMailLength = 50;
     const minPhoneLength = 7;
     const maxPhoneLength = 15;
+
+    const navigate = useNavigate();
 
     const [apiResponse, setApiResponse] = useState(null);
     const [username, setUsername] = useState('');
@@ -109,6 +112,10 @@ export default function Registration() {
             .then(data => setApiResponse(data))
             .catch(err => console.error(err))
               console.log('siunciame duomenis i serveri registracijai...')
+              if (data.status === 'success') {
+                changeLoginStatus(true);
+                navigate('/');
+            }
           }
         
     }

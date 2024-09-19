@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import logo from './draugas.png';
 import style from './Header.module.css'
 import { useContext } from 'react';
+import { GlobalContext } from '../../context/GlobalContext';
 
 export function Header() {
     const { isLogedIn, changeLoginStatus } = useContext(GlobalContext);
