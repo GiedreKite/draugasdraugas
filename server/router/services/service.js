@@ -24,7 +24,7 @@ async function postservice(req, res) {
         });
     }
 
-    const requiredFields = ['name', 'about', 'price', 'img'];
+    const requiredFields = ['name', 'about', 'price', 'img', 'state'];
 
     if (Object.keys(req.body).length !== requiredFields.length) {
         return res.json({
@@ -33,7 +33,7 @@ async function postservice(req, res) {
         });
     }
 
-    const { name, about, price, img } = req.body;
+    const { name, about, price, img, state } = req.body;
 
 
     const nameError = isValid(name);
@@ -67,12 +67,13 @@ async function postservice(req, res) {
     }
 
 
+
  
 
 
     try {
-        const sql = 'INSERT INTO users (name, about, price, img) VALUES (?, ?, ?, ?);';
-        const result = await connection.execute(sql, [name, about, price, img ]);
+        const sql = 'INSERT INTO services (name, about, price, img, state) VALUES (?, ?, ?, ?, ?);';
+        const result = await connection.execute(sql, [name, about, price, img, state]);
 
         if (result[0].affectedRows !== 1) {
             return res.json({
