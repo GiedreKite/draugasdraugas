@@ -1,6 +1,7 @@
 import { connection } from '../../db.js';
 import express from 'express'
-import { isValidPassword, isValidUsername } from '../../lib/isValid.js';
+import { usernameCheck } from '../../lib/usernameCheck.js';
+import { passCheck } from '../../lib/passCheck.js';
 
 export const singinAPIrouter = express.Router();
 
@@ -62,7 +63,7 @@ async function postSingin(req, res) {
 
     const { username, password } = req.body;
 
-    const usernameError = isValidUsername(username);
+    const usernameError = usernameCheck(username);
     if (usernameError) {
         return res.json({
             status: 'error',
@@ -70,7 +71,7 @@ async function postSingin(req, res) {
         });
     }
 
-    const passwordError = isValidPassword(password);
+    const passwordError = passCheck(password);
     if (passwordError) {
         return res.json({
             status: 'error',
@@ -80,9 +81,10 @@ async function postSingin(req, res) {
 
 
     try {
-        const sql = "SELECT id,username,password FROM users WHERE username = '?'";
+        const sql = "SELECT id,username,password FROM users WHERE username = ?;";
         const [result,fields] = await connection.execute(sql, [username]);
-
+        console.log(username)
+        console.log(result)
         if (result.length === 0 || result.length > 1) {
             return res.json({
                 status: 'error',
@@ -95,28 +97,30 @@ async function postSingin(req, res) {
                 data: 'Neatitinka prisijungimo duomenys',
             });
         }
+        const sql_2 = "SELECT id,name,surname,phone,state,mail,username FROM users WHERE id = ?";
+        const [result_final,fields_2] = await connection.execute(sql_2, [result[0].id]);
+
+        if (result_final.length === 0 || result_final.length > 1) {
+            return res.json({
+                status: 'error',
+                data: 'Nerastas vartotojas',
+            });
+        }
+
+
+        return res.json({
+            status: 'success',
+            data: {
+                'message':"Prisijungta sėkmingai",
+                'data':result_final[0],
+            },
+        });
     } catch (error) {
+        console.log(error)
         return res.json({
             status: 'error',
             data: 'Del techniniu kliuciu nepavyko ivykdyti registracijos proceso, pabandykite veliau',
         });
     }
-    const sql = "SELECT id,name,surname,phone,state,mail,username FROM users WHERE id = '?'";
-    const [result,fields] = await connection.execute(sql, [result[0].id]);
-
-    if (result.length === 0 || result.length > 1) {
-        return res.json({
-            status: 'error',
-            data: 'Nerastas vartotojas',
-        });
-    }
-
-
-    return res.json({
-        status: 'success',
-        data: {
-            'message':"Prisijungta sėkmingai",
-            'data':result[0],
-        },
-    });
+    
 }

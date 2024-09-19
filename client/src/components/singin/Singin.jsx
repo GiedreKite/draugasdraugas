@@ -60,7 +60,7 @@ export default function Singin() {
                 .then(res => res.json())
                 .then(data => {
                     setApiResponse(data);
-
+                    console.log(data);
                     if (data.status === 'success') {
                         changeLoginStatus(true);
                         navigate('/');

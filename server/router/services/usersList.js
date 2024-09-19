@@ -8,7 +8,7 @@ userInfoAPIrouter.get('/', getuserInfo);
 userInfoAPIrouter.put('/', putUpdateUserInfo);
 
 async function getuserInfo(req, res) {
-    const sql = 'SELECT username, name, surname, state, phone, mail,password, id FROM users;';
+    const sql = 'SELECT * FROM users;';
     const [dataFromServer,fields] = await connection.execute(sql);
 
 
