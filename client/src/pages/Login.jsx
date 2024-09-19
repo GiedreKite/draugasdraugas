@@ -1,6 +1,6 @@
 import { Footer } from "../components/footer/Footer";
 import { Header } from "../components/header/Header";
-import LoginOn from "../components/login/LoginOn";
+import LoginOn from "../components/unused/login/LoginOn";
 
 export function Login() {
     return (

@@ -11,10 +11,12 @@ import { ShoppingChart } from './pages/ShoppingChart';
 import { User } from './pages/User';
 import { ServiceCreate } from './pages/ServiceCreate';
 import "./index.css";
+import { GlobalContextWrapper } from './context/GlobalContext';
 // import style from './App.css'
 
 export function App() {
   return (
+    <GlobalContextWrapper>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />}></Route>
@@ -30,5 +32,7 @@ export function App() {
         <Route path='*' element={<NotFound />}></Route>
       </Routes>
     </BrowserRouter>
+    </GlobalContextWrapper>
+
   );
 }

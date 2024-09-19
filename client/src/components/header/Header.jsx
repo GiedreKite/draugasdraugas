@@ -1,8 +1,17 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import logo from './draugas.png';
 import style from './Header.module.css'
+import { useContext } from 'react';
 
 export function Header() {
+    const { isLogedIn, changeLoginStatus } = useContext(GlobalContext);
+
+    const navigate = useNavigate();
+
+    function logout(){
+        changeLoginStatus(false);
+        navigate('/');
+    }
     return (
             <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
                 <div className="col-md-3 mb-2 mb-md-0">
@@ -38,10 +47,17 @@ export function Header() {
                     </li>
                 </ul>
 
-                <div className="col-md-3 text-end">
+                {!isLogedIn &&   <div className="col-md-3 text-end">
                    <Link to="/singin" className="btn btn-outline-primary me-2">Prisijungti</Link>
                     <Link to="/register" className="btn btn-outline-primary me-2">Registracija</Link>
-                </div>
+                </div>}
+                {isLogedIn && 
+                <div className="col-md-3 text-end">
+ <Link to='/home' className="nav-link px-2">Pagrindinis</Link>
+ <button onClick={logout} type='button' className="btn btn-primary">Atsijungti</button>
+ 
+ </div>
+ }
             </header>
     );
 }

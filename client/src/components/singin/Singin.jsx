@@ -1,8 +1,13 @@
 // import style from './Registration.module.css'
 
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Singin() {
+    const {changeLoginStatus} = useContext(GlobalContext)
+
+    const navigate = useNavigate();
+
     const minUsernameLength = 3;
     const maxUsernameLength = 20;
     const minPasswordLength = 12;
@@ -40,33 +45,29 @@ export default function Singin() {
         setPasswordError(passwordError);
 
         if (!usernameError && !passwordError) {
-
             fetch('http://localhost:5028/api/login', {
-              method: 'POST',
-              headers: {
-                'Content-Type':'application/json',
-              },
-              body: JSON.stringify({
-                username, 
-                password,
-              })
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'include',
+                body: JSON.stringify({
+                    username,
+                    password,
+                }),
             })
+                .then(res => res.json())
+                .then(data => {
+                    setApiResponse(data);
 
-            .then(res => res.json())
-          .then(data => setApiResponse(data))
-          .catch(err => console.error(err))
-            console.log('siunciame duomenis i serveri registracijai...');
-        }else {
-                //duomenis nuskaitom, nueinam i norima puslapi
-                //data=resp.json()
-                //user = data['data']
-                //message = data['message']
-                window.location="/";
-                console.log('Pavyko');
-                
-            }
-        
+                    if (data.status === 'success') {
+                        changeLoginStatus(true);
+                        navigate('/');
+                    }
+                })
+                .catch(err => console.error(err));
         }
+    }
     
 
 
