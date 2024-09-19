@@ -20,6 +20,17 @@ async function getuserInfo(req, res) {
 }
 
 async function putUpdateUserInfo(req, res) {
+    if (typeof req.body !== 'object'
+        || Array.isArray(req.body)
+        || req.body === null
+    ) {
+        return res.json({
+            status: 'error',
+            data: 'Pagrindinis duomenu tipas turi buti objektas',
+        });
+    }
+    const {name, username, phone,surname,mail,state, password, id } = req.body;
+
     const sql = 'UPDATE users SET name = ?, username = ?, phone = ?,surname = ?,mail = ?,state = ?, password = ? WHERE id=?;';
     const [dataFromServer,fields] = await connection.execute(sql,[name, username, phone,surname,mail,state, password, id]);
 
