@@ -26,36 +26,36 @@ export function Header() {
                         <Link to="/" className="nav-link px-2 link-secondary">Home</Link>
                     </li>
                     <li>
+                        <Link to="/about" className="nav-link px-2 link-secondary">Apžvalga</Link>
+                    </li>
+                  
+                    <li>
+                        <Link to="/services" className="nav-link px-2 link-secondary">Teikiamos paslaugos</Link>
+                    </li>
+                    <li>
                         <Link to="/service" className="nav-link px-2 link-secondary">Sukurti paslaugą</Link>
                     </li>
                     <li>
-                        <Link to="/about" className="nav-link px-2 link-secondary">Apžvalga</Link>
+                        <Link to="/users" className="nav-link px-2 link-secondary">Vartotojų sąrašas</Link>
                     </li>
                     <li>
-                        <Link to="/services" className="nav-link px-2">Teikiamos paslaugos</Link>
+                        <Link to="/user" className="nav-link px-2 link-secondary"> Vartotojo informacija </Link>
                     </li>
+
                     <li>
-                        <Link to="/userslist" className="nav-link px-2">Vartotojų sąrašas</Link>
+                        <Link to="/chart" className="nav-link px-2 link-secondary">Pirkinių krepšelis</Link>
                     </li>
-                    <li>
-                        <Link to="/users" className="nav-link px-2">Vartotojo informacija</Link>
-                    </li>
-                    <li>
-                        <Link to="/chart" className="nav-link px-2">Pirkinių krepšelis</Link>
-                    </li>
-                    <li>
-                        <Link to="/404" className="nav-link px-2">404</Link>
-                    </li>
+
                 </ul>
 
-                {!isLogedIn &&   <div className="col-md-3 text-end">
-                   <Link to="/singin" className="btn btn-outline-primary me-2">Prisijungti</Link>
-                    <Link to="/register" className="btn btn-outline-primary me-2">Registracija</Link>
+                {!isLogedIn &&   <div className="nav-link px-2">
+                   <Link to="/singin" className="nav-link px-2">Prisijungti</Link>
+                    <Link to="/register" className="nav-link px-2">Registracija</Link>
                 </div>}
                 {isLogedIn && 
-                <div className="col-md-3 text-end">
- <Link to='/home' className="nav-link px-2">Pagrindinis</Link>
- <button onClick={logout} type='button' className="btn btn-primary">Atsijungti</button>
+                <div className="nav-link px-2">
+ <Link to='/home' className="nav-link px-2">Administratorė</Link>
+ <button onClick={logout} type='button' className="nav-link px-2">Atsijungti</button>
  
  </div>
  }

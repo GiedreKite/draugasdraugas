@@ -12,12 +12,12 @@ export default function Chart () {
           <div className="col-md-5 col-lg-4 order-md-last">
             <h4 className="d-flex justify-content-between align-items-center mb-3">
               <span className="text-primary">Jūsų krepšelis</span>
-              <span className="badge bg-primary rounded-pill">3</span>
+              <span className="badge bg-primary rounded-pill"></span>
             </h4>
             <ul className="list-group mb-3">
               <li className="list-group-item d-flex justify-content-between lh-sm">
                 <div>
-                  <h6 className="my-0">Paslaugos pavadinimas</h6>
+                  <h6 className="my-0">Pokalbis</h6>
                   <small className="text-body-secondary"></small>
                 </div>
                 <span className="text-body-secondary">20 Eur</span>
@@ -25,7 +25,7 @@ export default function Chart () {
            
               <li className="list-group-item d-flex justify-content-between">
                 <span>Viso (Eur)</span>
-                <strong>$20</strong>
+                <strong>20</strong>
               </li>
             </ul>
     
@@ -44,7 +44,7 @@ export default function Chart () {
               <div className="row g-3">
                 <div className="col-sm-6">
                   <label htmlFor="firstName" className="form-label">Vardas</label>
-                  <input type="text" className="form-control" id="firstName" placeholder="" value="" required="" />
+                  <input type="text" className="form-control" id="firstName" placeholder="" value="Giedrė" required="" />
                   <div className="invalid-feedback">
                     Reikalingas vartotojo vardas
                   </div>
@@ -53,7 +53,7 @@ export default function Chart () {
     
                 <div className="col-sm-6">
                   <label htmlFor="lastName" className="form-label">Pavardė</label>
-                  <input type="text" className="form-control" id="lastName" placeholder="" value="" required="" />
+                  <input type="text" className="form-control" id="lastName" placeholder="" value="Narvilatė" required="" />
                   <div className="invalid-feedback">
                    Reikalinga vartotojo pavardė
                   </div>
@@ -62,8 +62,8 @@ export default function Chart () {
                 <div className="col-12">
                   <label htmlFor="username" className="form-label">Vartotojo vardas</label>
                   <div className="input-group has-validation">
-                    <span className="input-group-text">@</span>
-                    <input type="text" className="form-control" id="username" placeholder="Username" required="" />
+                    <span className="input-group-text"></span>
+                    <input type="text" className="form-control" id="username" placeholder="Username" value="Giedrė" required="" />
                   <div className="invalid-feedback">
                   Reikalingas vartotojo e-paštas
                     </div>

@@ -78,7 +78,7 @@ async function postservice(req, res) {
         if (result[0].affectedRows !== 1) {
             return res.json({
                 status: 'error',
-                data: 'Uzregistruoti nepavyko, nes toks vartotojas jau yra',
+                data: 'Uzregistruoti nepavyko, tokia paslauga jau yra',
             });
         }
     } catch (error) {

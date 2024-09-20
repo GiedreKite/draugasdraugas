@@ -10,7 +10,7 @@ export function UsersListPage() {
             <main>
                 <div className="container">
                     <div className="row">
-                        <div className="col-12">
+                        <div className="col-1">
                         <UsersList/>
                             
                         </div>

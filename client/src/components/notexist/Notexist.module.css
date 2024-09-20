@@ -1,10 +1,15 @@
 .zero {
-    height: 400px;
-    width: 300px;
+    height: 200px;
+    width: 150px;
 }
 .four{
-    font-size: 400px;
+    font-size: 150px;
 }
 button {
     background-color: rgba(128, 128, 128, 0.582)!important;
+    color: rgba(0, 0, 0, 0.582)!important;
+}
+.logo{
+    height: 400px;
+    width: 400px;
 }

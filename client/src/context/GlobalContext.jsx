@@ -25,6 +25,26 @@ useEffect(() => {
     .catch(e=> console.error(e))
 
 }, [])
+// useEffect(() => {
+//     fetch('http://localhost:5026/api/singin', {
+//         method: 'PUT',
+//         credentials:'include',
+//     })
+//     .then(res => res.json())
+//     .then(data => console.log(data))
+//     .catch(e=> console.error(e))
+
+// }, [])
+// useEffect(() => {
+//     fetch('http://localhost:5026/api/singin', {
+//         method: 'POST',
+//         credentials:'include',
+//     })
+//     .then(res => res.json())
+//     .then(data => console.log(data))
+//     .catch(e=> console.error(e))
+
+// }, [])
 
     function changeLoginStatus(newStatus = false) {
         setisLogedIn(newStatus);

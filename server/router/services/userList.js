@@ -1,11 +1,11 @@
 import { connection } from '../../db.js';
 import express from 'express'
 
-export const userInfoAPIrouter = express.Router();
+export const userListAPIrouter = express.Router();
 
-userInfoAPIrouter.get('/', getuserInfo);
+userListAPIrouter.get('/', getuserInfo);
 
-userInfoAPIrouter.put('/', putUpdateUserInfo);
+userListAPIrouter.put('/', putUpdateUserInfo);
 
 async function getuserInfo(req, res) {
     const sql = 'SELECT * FROM users;';
@@ -20,7 +20,7 @@ async function getuserInfo(req, res) {
 }
 
 async function putUpdateUserInfo(req, res) {
-    const sql = 'UPDATE users SET name = ?, username = ?, phone = ?,surname = ?,mail = ?,state = ?, password = ? WHERE id=?;';
+    const sql = 'UPDATE users SET name = ?, username = ?, phone = ?,surname = ?,mail = ?,state = ?, password = ? WHERE id=1;';
     const [dataFromServer,fields] = await connection.execute(sql,[name, username, phone,surname,mail,state, password, id]);
 
 // klaidos pranesimas jei nesekminga ar pakeista daugiau maziau  eilute

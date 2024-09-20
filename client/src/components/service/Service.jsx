@@ -16,6 +16,7 @@ export default function Service() {
     const [aboutError, setAboutError] = useState('');
     const [priceError, setPriceError] = useState('');
     const [imgError, setImgError] = useState('');
+    const [stateError, setStateError] = useState('');
     
 
    const maxName =50
@@ -35,30 +36,35 @@ export default function Service() {
 
         let nameError = '';
         if (name.length > maxName) {
-            nameError = `Vardas yra per trumpas, turi būti mažiausiai ${maxName} simboliai`;
+            nameError = `Pavadinimas yra per ilgas, turi būti  ${maxName} simboliai`;
         } 
         setNameError(nameError);
 
         let aboutError = '';
         if (about.length > maxAbout) {
-            aboutError = `Pavardė yra per trumpa, turi būti mažiausiai ${maxAbout} simboliai`;
+            aboutError = `Apibūdinimas yra per trumpa, turi būti  ${maxAbout} simboliai`;
         } 
         setAboutError(aboutError);
 
         let priceError = '';
         if (price.length > maxPrice) {
-            priceError = `Elektroninis paštas yra per trumpas, turi būti mažiausiai ${maxPrice} simboliai`;
+            priceError = `Kaina per didelė, turi būti  ${maxPrice} simboliai`;
         }
         setPriceError(priceError);
         
         let imgError = '';
         if (img.length > maxImg) {
-            imgError = `Pavardė yra per trumpa, turi būti mažiausiai ${maxImg} simboliai`;
+            imgError = `Paveiksliuko nuoroda per ilga turi būti  ${maxImg} simboliai`;
         } 
         setImgError(imgError);
+        let stateError = '';
+        if (state.length > 15) {
+            stateError = `Vartotojo statusas per ilgas`;
+        } 
+        setStateError(stateError);
 
 
-        if (!nameError && !aboutError && !priceError && !imgError) {
+        if (!nameError && !aboutError && !priceError && !imgError && !stateError  ) {
             fetch('http://localhost:5026/api/service', {
                 method: 'POST',
                 headers: {

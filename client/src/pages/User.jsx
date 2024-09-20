@@ -38,7 +38,7 @@ export function User() {
                     </div>
                 </div>
                 <div className="container px-4 py-5">
-                    <div className="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+                    <div className="row row-cols-1 row-cols-lg-4 align-items-stretch g-4 py-5">
                         {users.map((user, index) => <UserInfo key={index} {...user} />)}
                     </div>
                 </div>

@@ -3,6 +3,7 @@ import { Header } from "../components/header/Header";
 import { Notexist } from "../components/notexist/Notexist";
 
 
+
 export function NotFound() {
     return (
         <>

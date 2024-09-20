@@ -61,36 +61,29 @@ export function UserInfo({ username, name, surname, state, phone, mail,password,
 }
     return (
       <form action="" onSubmit={submitForm}>
-         <table className="table table-striped table-sm">
+        
     
-<thead>
-  <tr>
-    <th scope="col">Vartotojo vardas</th>
-    <th scope="col">Vardas</th>
-    <th scope="col">Pavardė</th>
-    <th scope="col">Telefonas</th>
-    <th scope="col">E - paštas</th>
-    <th scope="col">Vartotojo teisės</th>
-    <th scope="col">Slaptažodis</th>
-    <th scope="col">Slaptažodis</th>
-    <th>Patvirtinti</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td> <input type="text" defaultValue={username}  name="username_new"/></td>
-    <td><input type="text" defaultValue={name} name="name_new"/></td>
-    <td><input type="text" defaultValue={surname}  name="surname_new"/> </td>
-    <td><input type="text" defaultValue={phone}  name="phone_new"/> </td>
-    <td><input type="text" defaultValue={mail}  name="mail_new"/> </td>
-    <td><input type="text" defaultValue={state}  name="state_new"/> </td>
-    <td><input type="password" defaultValue={password}  name="password_new"/> </td>
-    <td><input type="password" defaultValue={password}  name="password_new_2"/> </td>
-    <td> <button>Patvirtinti</button> </td>
-  </tr>
-</tbody>
 
-</table>
+
+    <input type="text" defaultValue={username}  name="username_new"/>
+    <label htmlFor="username">Vartotojo vardas</label>
+   <input type="text" defaultValue={name} name="name_new"/>
+   <label htmlFor="username">Vardas</label>
+   <input type="text" defaultValue={surname}  name="surname_new"/> 
+   <label htmlFor="username">Pavardė</label>
+   <input type="text" defaultValue={phone}  name="phone_new"/> 
+   <label htmlFor="username">Telefono numeris</label>
+   <input type="text" defaultValue={mail}  name="mail_new"/> 
+   <label htmlFor="username">Elektroninis paštas</label>
+   <input type="text" defaultValue={state}  name="state_new"/> 
+   <label htmlFor="username">Vartotojo teisės</label>
+   <input type="password" defaultValue={password}  name="password_new"/> 
+   <label htmlFor="username">Slaptažodis</label>
+   <input type="password" defaultValue={password}  name="password_new_2"/> 
+   <label htmlFor="username">Pakartotinas slaptažodis</label>
+    <button>Patvirtinti</button> 
+  
+
 
 </form>
 
